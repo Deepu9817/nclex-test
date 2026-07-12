@@ -3,10 +3,10 @@ import React from "react";
 import Image from "next/image";
 import { Clock3, Info, ClipboardList } from "lucide-react";
 import mockTest from "@/data/questions";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 export default function HomePage() {
-  const { totalTime, duration, totalQuestions } = mockTest;
+  const { totalTime, duration, questions } = mockTest;
   const router = useRouter();
 
   return (
@@ -115,7 +115,7 @@ export default function HomePage() {
         </p>
 
         <p className="text-right text-sm sm:text-base">
-          {totalQuestions}
+          {questions.length}
         </p>
       </div>
     </div>
@@ -132,7 +132,7 @@ export default function HomePage() {
           <ul className="mt-3 ml-6 list-disc text-sm text-gray-700 space-y-1">
             <li>Do not refresh or close the browser during the test.</li>
             <li>You can save and return to questions anytime.</li>
-            <li>Click "Submit Test" after answering all questions.</li>
+            <li>Click &quot;Submit Test&quot; after answering all questions.</li>
           </ul>
         </div>
 

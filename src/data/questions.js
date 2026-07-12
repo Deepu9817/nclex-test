@@ -1,272 +1,310 @@
-
-
 const mockTest = {
   title: "NCLEX Mock Test - Unit 1 & Unit 2",
   totalTime: "01:00:00",
-  duration: 60, // minutes
+  duration: 60,
   totalQuestions: 50,
-
   questions: [
+
     {
       id: 1,
-      question:
-        "A postoperative patient suddenly becomes restless, pale, and tachycardic. What should the nurse suspect first?",
-      options: [
-        "Infection",
-        "Hemorrhage",
-        "Urinary tract infection",
-        "Paralytic ileus",
-      ],
+      question: 'A postoperative patient suddenly becomes restless, pale, and tachycardic. What should the nurse suspect first?',
+      options: ['Infection', 'Hemorrhage', 'Urinary tract infection', 'Paralytic ileus'],
       correctAnswer: 1,
     },
-
     {
       id: 2,
-      question:
-        "Which assessment finding is the earliest indicator of hypovolemic shock?",
-      options: [
-        "Bradycardia",
-        "Tachycardia",
-        "Hypertension",
-        "Increased urine output",
-      ],
+      question: 'Which assessment finding is the earliest indicator of hypovolemic shock?',
+      options: ['Bradycardia', 'Tachycardia', 'Hypertension', 'Increased urine output'],
       correctAnswer: 1,
     },
-
     {
       id: 3,
-      question:
-        "A nurse is caring for a patient with active postoperative bleeding. Which nursing action is the priority?",
-      options: [
-        "Encourage oral fluids",
-        "Apply pressure to the bleeding site and notify the provider",
-        "Ambulate the patient",
-        "Administer a laxative",
-      ],
+      question: 'A nurse is caring for a patient with active postoperative bleeding. Which nursing action is the priority?',
+      options: ['Encourage oral fluids', 'Apply pressure to the bleeding site and notify the provider', 'Ambulate the patient', 'Administer a laxative'],
       correctAnswer: 1,
     },
-
     {
       id: 4,
-      question:
-        "Which clinical finding is most commonly associated with sepsis?",
-      options: [
-        "Fever",
-        "Bradycardia",
-        "Decreased respiratory rate",
-        "Hypertension",
-      ],
+      question: 'Which clinical finding is most commonly associated with sepsis?',
+      options: ['Fever', 'Bradycardia', 'Decreased respiratory rate', 'Hypertension'],
       correctAnswer: 0,
     },
-
     {
       id: 5,
-      question:
-        "Which laboratory result is commonly elevated in patients with sepsis?",
-      options: [
-        "Calcium",
-        "Platelet count",
-        "Lactate level",
-        "Hemoglobin",
-      ],
+      question: 'Which laboratory result is commonly elevated in patients with sepsis?',
+      options: ['Calcium', 'Platelet count', 'Lactate level', 'Hemoglobin'],
       correctAnswer: 2,
     },
-
     {
       id: 6,
-      question: "Wound dehiscence is best described as:",
-      options: [
-        "Infection of the incision",
-        "Complete protrusion of abdominal organs",
-        "Separation of the wound edges",
-        "Excessive bruising around the incision",
-      ],
+      question: 'Wound dehiscence is best described as:',
+      options: ['Infection of the incision', 'Complete protrusion of abdominal organs', 'Separation of the wound edges', 'Excessive bruising around the incision'],
       correctAnswer: 2,
     },
-
     {
       id: 7,
-      question:
-        "A patient's abdominal incision suddenly opens and intestines are visible. What is the nurse's first action?",
-      options: [
-        "Push the organs back into the abdomen",
-        "Cover the organs with sterile saline-moistened dressings",
-        "Apply direct pressure with dry gauze",
-        "Allow the wound to air dry",
-      ],
+      question: "A patient's abdominal incision suddenly opens and intestines are visible. What is the nurse's first action?",
+      options: ['Push the organs back into the abdomen', 'Cover the organs with sterile saline-moistened dressings', 'Apply direct pressure with dry gauze', 'Allow the wound to air dry'],
       correctAnswer: 1,
     },
-
     {
       id: 8,
-      question:
-        "Which patient has the greatest risk for developing deep vein thrombosis (DVT)?",
-      options: [
-        "Patient walking independently",
-        "Patient on prolonged bed rest after surgery",
-        "Patient with seasonal allergies",
-        "Patient with controlled hypertension",
-      ],
+      question: 'Which patient has the greatest risk for developing deep vein thrombosis (DVT)?',
+      options: ['Patient walking independently', 'Patient on prolonged bed rest after surgery', 'Patient with seasonal allergies', 'Patient with controlled hypertension'],
       correctAnswer: 1,
     },
-
     {
       id: 9,
-      question:
-        "Which assessment finding is most suggestive of a pulmonary embolism?",
-      options: [
-        "Sudden shortness of breath",
-        "Constipation",
-        "Increased appetite",
-        "Bradycardia",
-      ],
+      question: 'Which assessment finding is most suggestive of a pulmonary embolism?',
+      options: ['Sudden shortness of breath', 'Constipation', 'Increased appetite', 'Bradycardia'],
       correctAnswer: 0,
     },
-
     {
       id: 10,
-      question:
-        "Which nursing intervention is most effective in preventing postoperative atelectasis?",
-      options: [
-        "Bed rest",
-        "Incentive spirometry every 1–2 hours",
-        "Fluid restriction",
-        "Keeping the patient NPO",
-      ],
+      question: 'Which nursing intervention is most effective in preventing postoperative atelectasis?',
+      options: ['Bed rest', 'Incentive spirometry every 1–2 hours', 'Fluid restriction', 'Keeping the patient NPO'],
       correctAnswer: 1,
     },
-
     {
       id: 11,
-      question:
-        "Which assessment finding is most consistent with pneumonia?",
-      options: [
-        "Crackles on lung auscultation",
-        "Hyperactive bowel sounds",
-        "Bradycardia",
-        "Clear breath sounds bilaterally",
-      ],
+      question: 'Which assessment finding is most consistent with pneumonia?',
+      options: ['Crackles on lung auscultation', 'Hyperactive bowel sounds', 'Bradycardia', 'Clear breath sounds bilaterally'],
       correctAnswer: 0,
     },
-
     {
       id: 12,
-      question:
-        "A postoperative patient has not voided for 8 hours after surgery. What is the nurse's priority action?",
-      options: [
-        "Assess bladder distention and encourage voiding",
-        "Restrict oral fluids",
-        "Administer antibiotics",
-        "Encourage sleep",
-      ],
+      question: "A postoperative patient has not voided for 8 hours after surgery. What is the nurse's priority action?",
+      options: ['Assess bladder distention and encourage voiding', 'Restrict oral fluids', 'Administer antibiotics', 'Encourage sleep'],
       correctAnswer: 0,
     },
-
     {
       id: 13,
-      question:
-        "Which nursing intervention helps prevent urinary tract infections?",
-      options: [
-        "Restrict fluid intake",
-        "Encourage adequate hydration",
-        "Delay bladder emptying",
-        "Keep the patient on bed rest",
-      ],
+      question: 'Which nursing intervention helps prevent urinary tract infections?',
+      options: ['Restrict fluid intake', 'Encourage adequate hydration', 'Delay bladder emptying', 'Keep the patient on bed rest'],
       correctAnswer: 1,
     },
-
     {
       id: 14,
-      question:
-        "Which assessment finding is most characteristic of paralytic ileus?",
-      options: [
-        "Hyperactive bowel sounds",
-        "Absent bowel sounds with abdominal distention",
-        "Bloody diarrhea",
-        "Frequent urination",
-      ],
+      question: 'Which assessment finding is most characteristic of paralytic ileus?',
+      options: ['Hyperactive bowel sounds', 'Absent bowel sounds with abdominal distention', 'Bloody diarrhea', 'Frequent urination'],
       correctAnswer: 1,
     },
-
     {
       id: 15,
-      question:
-        "Which finding is most consistent with constipation?",
-      options: [
-        "Loose watery stools",
-        "Hard, dry, infrequent stools",
-        "Bloody stools",
-        "Frequent bowel movements",
-      ],
+      question: 'Which finding is most consistent with constipation?',
+      options: ['Loose watery stools', 'Hard, dry, infrequent stools', 'Bloody stools', 'Frequent bowel movements'],
       correctAnswer: 1,
     },
-
     {
       id: 16,
-      question:
-        "A postoperative patient complains of persistent nausea and vomiting. Which medication would the nurse expect the provider to prescribe?",
-      options: [
-        "Antibiotic",
-        "Antiemetic",
-        "Anticoagulant",
-        "Antihypertensive",
-      ],
+      question: 'A postoperative patient complains of persistent nausea and vomiting. Which medication would the nurse expect the provider to prescribe?',
+      options: ['Antibiotic', 'Antiemetic', 'Anticoagulant', 'Antihypertensive'],
       correctAnswer: 1,
     },
-
     {
       id: 17,
-      question:
-        "Which electrolyte imbalance commonly causes muscle weakness and cardiac dysrhythmias?",
-      options: [
-        "Hypokalemia",
-        "Hypercalcemia",
-        "Hypernatremia",
-        "Hypermagnesemia",
-      ],
+      question: 'Which electrolyte imbalance commonly causes muscle weakness and cardiac dysrhythmias?',
+      options: ['Hypokalemia', 'Hypercalcemia', 'Hypernatremia', 'Hypermagnesemia'],
       correctAnswer: 0,
     },
-
     {
       id: 18,
-      question:
-        "Which method is the most reliable for assessing a patient's pain?",
-      options: [
-        "Nurse's observation only",
-        "Family member's opinion",
-        "Standardized pain rating scale reported by the patient",
-        "Vital signs alone",
-      ],
+      question: "Which method is the most reliable for assessing a patient's pain?",
+      options: ["Nurse's observation only", "Family member's opinion", 'Standardized pain rating scale reported by the patient', 'Vital signs alone'],
       correctAnswer: 2,
     },
-
     {
       id: 19,
-      question:
-        "A patient develops a fever 24 hours after surgery. Which condition is the most likely cause?",
-      options: [
-        "Atelectasis",
-        "Myocardial infarction",
-        "Liver failure",
-        "Stroke",
-      ],
+      question: 'A patient develops a fever 24 hours after surgery. Which condition is the most likely cause?',
+      options: ['Atelectasis', 'Myocardial infarction', 'Liver failure', 'Stroke'],
       correctAnswer: 0,
     },
-
     {
       id: 20,
-      question:
-        "Which patient is at the highest risk for developing a pressure injury?",
-      options: [
-        "Young adult who walks independently",
-        "Immobile elderly patient confined to bed",
-        "Patient receiving outpatient physical therapy",
-        "Healthy adolescent athlete",
-      ],
+      question: 'Which patient is at the highest risk for developing a pressure injury?',
+      options: ['Young adult who walks independently', 'Immobile elderly patient confined to bed', 'Patient receiving outpatient physical therapy', 'Healthy adolescent athlete'],
       correctAnswer: 1,
     },
-
-    // Continue Questions 21-50 exactly the same way...
+    {
+      id: 21,
+      question: 'Which factor is most likely to delay wound healing?',
+      options: ['Adequate nutrition', 'Smoking', 'Good blood circulation', 'Proper wound care'],
+      correctAnswer: 1,
+    },
+    {
+      id: 22,
+      question: 'Which assessment finding is the classic early sign of compartment syndrome?',
+      options: ['Severe pain not relieved by analgesics', 'Warm skin', 'Increased appetite', 'Diarrhea'],
+      correctAnswer: 0,
+    },
+    {
+      id: 23,
+      question: 'Which nursing intervention is most effective in preventing deep vein thrombosis (DVT) after surgery?',
+      options: ['Leg exercises and early ambulation', 'Fluid restriction', 'Complete bed rest', 'Keeping the legs dependent'],
+      correctAnswer: 0,
+    },
+    {
+      id: 24,
+      question: 'Which assessment finding is the earliest indication of hemorrhage?',
+      options: ['Tachycardia', 'Cyanosis', 'Bradycardia', 'Generalized edema'],
+      correctAnswer: 0,
+    },
+    {
+      id: 25,
+      question: "Which assessment finding requires the nurse's immediate intervention?",
+      options: ['Oxygen saturation of 84%', 'Pain score of 3/10', 'Blood pressure of 122/78 mmHg', 'Heart rate of 78 beats/min'],
+      correctAnswer: 0,
+    },
+    {
+      id: 26,
+      question: 'The intraoperative phase begins when the patient:',
+      options: ['Is admitted to the hospital', 'Enters the operating room', 'Returns to the recovery room', 'Is discharged home'],
+      correctAnswer: 1,
+    },
+    {
+      id: 27,
+      question: 'Which responsibility belongs primarily to the circulating nurse?',
+      options: ['Passing sterile instruments', 'Maintaining patient safety and documentation', 'Performing the surgical procedure', 'Administering anesthesia'],
+      correctAnswer: 1,
+    },
+    {
+      id: 28,
+      question: 'The scrub nurse performs duties:',
+      options: ['Outside the sterile field', 'Within the sterile field', 'Only in the recovery room', 'Only before surgery begins'],
+      correctAnswer: 1,
+    },
+    {
+      id: 29,
+      question: 'Which action breaks sterile technique?',
+      options: ['Reaching over a sterile field', 'Wearing sterile gloves', 'Opening sterile packages correctly', 'Keeping sterile supplies dry'],
+      correctAnswer: 0,
+    },
+    {
+      id: 30,
+      question: 'A sterile field should always be maintained:',
+      options: ['Below waist level', 'Above waist level and in constant view', 'Covered with a towel', 'Next to the sink'],
+      correctAnswer: 1,
+    },
+    {
+      id: 31,
+      question: 'Why is moisture on a sterile drape considered unsafe?',
+      options: ['It strengthens sterility', 'It allows microorganisms to pass through (strike-through contamination)', 'It makes instruments easier to use', 'It improves visibility'],
+      correctAnswer: 1,
+    },
+    {
+      id: 32,
+      question: 'Which sterile item should be considered contaminated?',
+      options: ['A sterile package that becomes wet', 'A dry sterile drape', 'A sealed sterile instrument tray', 'A properly stored sterile glove package'],
+      correctAnswer: 0,
+    },
+    {
+      id: 33,
+      question: 'The primary purpose of a surgical hand scrub is to:',
+      options: ['Remove jewelry', 'Reduce the number of microorganisms on the hands and arms', 'Improve blood circulation', 'Prevent dry skin'],
+      correctAnswer: 1,
+    },
+    {
+      id: 34,
+      question: 'Which sterilization method is most appropriate for heat-sensitive surgical equipment?',
+      options: ['Steam sterilization', 'Ethylene oxide gas sterilization', 'Boiling water', 'Soap and water cleaning'],
+      correctAnswer: 1,
+    },
+    {
+      id: 35,
+      question: 'Which process destroys all microorganisms, including bacterial spores?',
+      options: ['Cleaning', 'Sterilization', 'Disinfection', 'Rinsing'],
+      correctAnswer: 1,
+    },
+    {
+      id: 36,
+      question: 'The primary purpose of surgical skin preparation before an operation is to:',
+      options: ['Remove body hair only', 'Reduce the number of microorganisms on the skin', 'Improve circulation', 'Prevent dehydration'],
+      correctAnswer: 1,
+    },
+    {
+      id: 37,
+      question: 'Which patient position is most commonly used for abdominal surgery?',
+      options: ['Lithotomy', 'Supine', 'Prone', "Sims' position"],
+      correctAnswer: 1,
+    },
+    {
+      id: 38,
+      question: 'Why are instrument, sponge, and needle counts performed before and after surgery?',
+      options: ['To reduce the cost of surgery', 'To prevent retained surgical items', 'To shorten the surgical procedure', 'To improve anesthesia effectiveness'],
+      correctAnswer: 1,
+    },
+    {
+      id: 39,
+      question: 'During the final sponge count, one sponge is missing. What should the nurse do first?',
+      options: ['Ignore the discrepancy', 'Notify the surgeon immediately and repeat the count', 'Close the incision first', 'Complete the documentation later'],
+      correctAnswer: 1,
+    },
+    {
+      id: 40,
+      question: "Which member of the surgical team is primarily responsible for maintaining the patient's airway and administering anesthesia?",
+      options: ['Scrub nurse', 'Circulating nurse', 'Anesthesia provider', 'Surgeon'],
+      correctAnswer: 2,
+    },
+    {
+      id: 41,
+      question: 'Which statement correctly describes an important principle of aseptic technique?',
+      options: ['Sterile objects may touch only sterile objects.', 'Sterile objects may touch clean objects.', 'Clean gloves are the same as sterile gloves.', 'Wet sterile fields remain sterile.'],
+      correctAnswer: 0,
+    },
+    {
+      id: 42,
+      question: 'Which nursing action is an example of medical asepsis (clean technique)?',
+      options: ['Performing hand hygiene before patient care', 'Donning sterile gloves for surgery', 'Performing a surgical hand scrub', 'Setting up a sterile field'],
+      correctAnswer: 0,
+    },
+    {
+      id: 43,
+      question: 'Which situation presents the greatest fire risk in the operating room?',
+      options: ['Oxygen accumulating near an ignition source', 'Wearing sterile gloves', 'Using normal saline irrigation', 'Keeping instruments on a sterile tray'],
+      correctAnswer: 0,
+    },
+    {
+      id: 44,
+      question: 'A sterile package accidentally falls onto the floor before it is opened. What should the nurse do?',
+      options: ['Open it and use it immediately', 'Consider it contaminated and replace it', 'Wipe the outside with antiseptic solution', 'Cover it with a sterile towel and continue using it'],
+      correctAnswer: 1,
+    },
+    {
+      id: 45,
+      question: 'Which member of the surgical team performs the actual surgical procedure?',
+      options: ['Circulating nurse', 'Scrub nurse', 'Surgeon', 'Surgical technologist'],
+      correctAnswer: 2,
+    },
+    {
+      id: 46,
+      question: 'Which nursing intervention is most effective in preventing a surgical site infection (SSI)?',
+      options: ['Maintaining strict aseptic technique', "Restricting the patient's fluid intake", 'Delaying prophylactic antibiotics', 'Leaving the incision uncovered after surgery'],
+      correctAnswer: 0,
+    },
+    {
+      id: 47,
+      question: "A tissue specimen is removed during surgery. What is the nurse's priority responsibility?",
+      options: ['Place it in a biohazard waste container', 'Label the specimen correctly and send it to the laboratory', "Give the specimen to the patient's family", 'Leave it on the sterile field until the surgery is completed'],
+      correctAnswer: 1,
+    },
+    {
+      id: 48,
+      question: 'What is the highest priority for the nurse during the intraoperative phase?',
+      options: ['Patient safety', 'Visitor comfort', 'Meal planning', 'Discharge teaching'],
+      correctAnswer: 0,
+    },
+    {
+      id: 49,
+      question: 'Which statement about sterile gloves is correct?',
+      options: ['Sterile gloves remain sterile indefinitely.', 'Torn sterile gloves should be replaced immediately.', 'Sterile gloves may touch nonsterile surfaces without contamination.', 'Wet sterile gloves remain sterile.'],
+      correctAnswer: 1,
+    },
+    {
+      id: 50,
+      question: 'Which nursing action is most effective in preventing retained surgical items (RSIs)?',
+      options: ['Wearing double gloves', 'Performing accurate sponge, instrument, and needle counts', 'Limiting the number of people in the operating room', 'Increasing the duration of surgery'],
+      correctAnswer: 1,
+    },
   ],
 };
 

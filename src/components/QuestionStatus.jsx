@@ -12,11 +12,6 @@ export default function QuestionStatus() {
       color: "bg-white",
       border: "border border-gray-400",
     },
-    {
-      label: "Marked for Review",
-      color: "bg-amber-400",
-      border: "",
-    },
   ];
 
   return (
