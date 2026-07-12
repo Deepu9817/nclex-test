@@ -1,23 +1,60 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
 import QuestionCard from "../components/QuestionCard";
 import QuestionStatus from "../components/QuestionStatus";
 import QuestionNavigator from "../components/QuestionNavigator";
 import BottomActions from "../components/BottomActions";
 import mockTest from "../data/questions";
+import { useTestSession } from "@/context/TestSessionContext";
 
-export default function PracticePage() {
+export default function Practice() {
+  const router = useRouter();
   const { questions } = mockTest;
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [savedAnswers, setSavedAnswers] = useState({});
   const [submissionMessage, setSubmissionMessage] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const hasAutoSubmitted = useRef(false);
+  const { isExpired, submitTest } = useTestSession();
 
   const currentQuestion = questions[currentQuestionIndex];
   const totalQuestions = questions.length;
 
+  const isTestComplete = isExpired || isSubmitted;
+
+  const completeTest = () => {
+    const answersToSubmit = { ...savedAnswers, ...selectedAnswers };
+    const answeredCount = Object.keys(answersToSubmit).length;
+
+    submitTest(answersToSubmit);
+    setIsSubmitted(true);
+    setSubmissionMessage(
+      `Your test was submitted with ${answeredCount} of ${totalQuestions} answers.`
+    );
+    router.push("/result");
+  };
+
+  useEffect(() => {
+    if (!isExpired || hasAutoSubmitted.current) {
+      return;
+    }
+
+    const answersToSubmit = { ...savedAnswers, ...selectedAnswers };
+    hasAutoSubmitted.current = true;
+    submitTest(answersToSubmit);
+    router.push("/result");
+  }, [isExpired, router, savedAnswers, selectedAnswers, submitTest]);
+
+  const displayedSubmissionMessage = isExpired
+    ? `Time is up. Your test was automatically submitted with ${Object.keys(savedAnswers).length} of ${totalQuestions} saved answers.`
+    : submissionMessage;
+
   const handleAnswerChange = (answerIndex) => {
+    if (isTestComplete) return;
+
     setSelectedAnswers((currentAnswers) => ({
       ...currentAnswers,
       [currentQuestion.id]: answerIndex,
@@ -26,6 +63,8 @@ export default function PracticePage() {
   };
 
   const handleSaveAndNext = () => {
+    if (isTestComplete) return;
+
     const selectedAnswer = selectedAnswers[currentQuestion.id];
 
     if (selectedAnswer !== undefined) {
@@ -35,10 +74,14 @@ export default function PracticePage() {
       }));
     }
 
-    setCurrentQuestionIndex((index) => index + 1);
+    if (currentQuestionIndex < totalQuestions - 1) {
+      setCurrentQuestionIndex((index) => index + 1);
+    }
   };
 
   const handleClearSelection = () => {
+    if (isTestComplete) return;
+
     const questionId = currentQuestion.id;
 
     setSelectedAnswers((currentAnswers) => {
@@ -52,12 +95,7 @@ export default function PracticePage() {
     setSubmissionMessage("");
   };
 
-  const handleSubmit = () => {
-    const answeredCount = Object.keys(savedAnswers).length;
-    setSubmissionMessage(
-      `You have answered ${answeredCount} of ${totalQuestions} questions.`
-    );
-  };
+  const handleSubmit = () => completeTest();
 
   if (totalQuestions === 0) {
     return <main className="p-6">No questions are available.</main>;
@@ -73,8 +111,11 @@ export default function PracticePage() {
             question={currentQuestion}
             questionNumber={currentQuestionIndex + 1}
             totalQuestions={totalQuestions}
-            selectedAnswer={selectedAnswers[currentQuestion.id]}
+            selectedAnswer={
+              selectedAnswers[currentQuestion.id] ?? savedAnswers[currentQuestion.id]
+            }
             onAnswerChange={handleAnswerChange}
+            disabled={isTestComplete}
           />
         </section>
 
@@ -88,15 +129,16 @@ export default function PracticePage() {
               currentQuestionIndex={currentQuestionIndex}
               answers={savedAnswers}
               onSelectQuestion={setCurrentQuestionIndex}
+              disabled={isTestComplete}
             />
           </div>
         </aside>
       </div>
 
       {/* Footer */}
-      {submissionMessage && (
+      {displayedSubmissionMessage && (
         <p className="text-center text-sm font-medium text-[#19346F]">
-          {submissionMessage}
+          {displayedSubmissionMessage}
         </p>
       )}
 
@@ -112,6 +154,7 @@ export default function PracticePage() {
           savedAnswers[currentQuestion.id] !== undefined
         }
         onSubmit={handleSubmit}
+        isTestComplete={isTestComplete}
       />
     </main>
   );

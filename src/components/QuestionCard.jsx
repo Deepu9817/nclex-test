@@ -8,6 +8,7 @@ export default function QuestionCard({
   totalQuestions,
   selectedAnswer,
   onAnswerChange,
+  disabled,
 }) {
   return (
     <div className="h-full flex flex-col p-8">
@@ -35,8 +36,9 @@ export default function QuestionCard({
               key={optionLabel}
               type="button"
               onClick={() => onAnswerChange(index)}
+              disabled={disabled}
               aria-pressed={selectedAnswer === index}
-              className="flex items-center gap-5 text-left group"
+              className="flex items-center gap-5 text-left group disabled:cursor-not-allowed disabled:opacity-60"
             >
               {/* Radio */}
               <div

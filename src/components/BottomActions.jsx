@@ -17,6 +17,7 @@ export default function BottomActions({
   onClearSelection,
   hasSelection,
   onSubmit,
+  isTestComplete,
 }) {
   const isFirstQuestion = currentQuestionIndex === 0;
   const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
@@ -32,7 +33,7 @@ export default function BottomActions({
           <button
             type="button"
             onClick={onPrevious}
-            disabled={isFirstQuestion}
+            disabled={isFirstQuestion || isTestComplete}
             className="flex items-center gap-2  bg-gray-200 hover:bg-gray-400 text-black transition px-4 py-2 rounded-xl font-semibold text-sm disabled:cursor-not-allowed disabled:opacity-50"
           >
             <ChevronLeft size={14} />
@@ -43,7 +44,7 @@ export default function BottomActions({
           <button
             type="button"
             onClick={onNext}
-            disabled={isLastQuestion}
+            disabled={isLastQuestion || isTestComplete}
             className="flex items-center bg-blue-500 hover:bg-blue-800 text-white transition px-4 py-2 rounded-xl font-semibold text-sm disabled:cursor-not-allowed disabled:opacity-50"
           >
             NEXT QUES.
@@ -54,7 +55,7 @@ export default function BottomActions({
           <button
             type="button"
             onClick={onSaveAndNext}
-            disabled={isLastQuestion}
+            disabled={isTestComplete}
             className="flex items-center gap-2 bg-green-500 text-white hover:bg-green-600 transition px-4 py-2 rounded-xl font-semibold text-sm disabled:cursor-not-allowed disabled:opacity-50"
           >
             <Save size={14} />
@@ -64,7 +65,7 @@ export default function BottomActions({
           <button
             type="button"
             onClick={onClearSelection}
-            disabled={!hasSelection}
+            disabled={!hasSelection || isTestComplete}
             className="flex items-center gap-2 border-2 border-gray-300 hover:bg-gray-100 text-gray-700 transition px-4 py-2 rounded-xl font-semibold text-sm disabled:cursor-not-allowed disabled:opacity-50"
           >
             <Eraser size={14} />
@@ -77,7 +78,8 @@ export default function BottomActions({
         <button
           type="button"
           onClick={onSubmit}
-          className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white transition px-6 py-2.5 rounded-xl font-semibold text-[15px] w-full md:w-auto"
+          disabled={isTestComplete}
+          className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white transition px-6 py-2.5 rounded-xl font-semibold text-[15px] w-full md:w-auto disabled:cursor-not-allowed disabled:opacity-50"
         >
           <Send size={17} />
           SUBMIT TEST

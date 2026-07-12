@@ -22,11 +22,11 @@ export default function QuestionStatus() {
       </h2>
 
       {/* Legend */}
-      <div className="mt-2 space-y-4">
+      <div className="mt-2 flex gap-8">
         {status.map((item) => (
           <div
             key={item.label}
-            className="flex items-center gap-4"
+            className="flex items-center gap-2"
           >
             <div
               className={`w-4 h-4 rounded-md shadow-sm ${item.color} ${item.border}`}

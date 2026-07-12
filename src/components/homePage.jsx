@@ -4,10 +4,17 @@ import Image from "next/image";
 import { Clock3, Info, ClipboardList } from "lucide-react";
 import mockTest from "@/data/questions";
 import { useRouter } from "next/router";
+import { useTestSession } from "@/context/TestSessionContext";
 
 export default function HomePage() {
   const { totalTime, duration, questions } = mockTest;
   const router = useRouter();
+  const { startTest } = useTestSession();
+
+  const handleStartTest = () => {
+    startTest();
+    router.push("/practice");
+  };
 
   return (
     <main className="min-h-[calc(100vh-110px)] bg-[#FAFBFF] relative overflow-hidden flex justify-center items-center px-4 py-6">
@@ -138,7 +145,7 @@ export default function HomePage() {
 
         {/* Button */}
         <div className="flex justify-center mt-7">
-          <button  onClick={() => router.push("/practicePage")} className="flex items-center gap-3 bg-blue-700 hover:bg-blue-800 transition text-white font-bold text-xl px-10 py-3 rounded-xl shadow-lg">
+          <button onClick={handleStartTest} className="flex items-center gap-3 bg-blue-700 hover:bg-blue-800 transition text-white font-bold text-xl px-10 py-3 rounded-xl shadow-lg">
             <ClipboardList size={24} />
             START TEST
           </button>

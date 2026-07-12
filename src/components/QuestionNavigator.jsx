@@ -5,6 +5,7 @@ export default function QuestionNavigator({
   currentQuestionIndex,
   answers,
   onSelectQuestion,
+  disabled,
 }) {
   const totalQuestions = questions.length;
 
@@ -42,7 +43,8 @@ export default function QuestionNavigator({
                 key={question.id}
                 type="button"
                 onClick={() => onSelectQuestion(index)}
-                className={`w-7 h-7 rounded-lg border text-xs font-semibold transition ${getButtonStyle(
+                disabled={disabled}
+                className={`w-7 h-7 rounded-lg border text-xs font-semibold transition disabled:cursor-not-allowed ${getButtonStyle(
                   number
                 )}`}
               >
