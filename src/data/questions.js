@@ -1,7 +1,7 @@
 const mockTest = {
   title: "NCLEX Mock Test - Unit 1 & Unit 2",
   totalTime: "01:00:00",
-  duration: 60,
+  duration: 60, //Minutes
   totalQuestions: 50,
   questions: [
 

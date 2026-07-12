@@ -56,7 +56,7 @@ export default function QuestionCard({
 
               {/* Option */}
               <div className="flex items-center gap-2">
-                <span className="text-blue-700 font-bold text-md min-w-8">
+                <span className="text-blue-700 font-bold text-md">
                   {optionLabel}.
                 </span>
 
